@@ -1,0 +1,49 @@
+{
+  "name": "eslint-processor-html",
+  "version": "1.0.0",
+  "description": "ESLint HTML processor",
+  "type": "module",
+  "main": "./build/index.js",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "build": "npm run build:type && npm run build:js",
+    "build:type": "tsc -b --noCheck --emitDeclarationOnly",
+    "build:js": "esbuild src/index.ts --outdir=build --format=esm --packages=external --sourcemap --bundle --minify",
+    "lint": "eslint --ext .ts,.tsx .",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "eslint",
+    "processor",
+    "html"
+  ],
+  "license": "ISC",
+  "files": [
+    "build",
+    "!build/cache",
+    "!*.tsbuildinfo",
+    "CHANGELOG.*"
+  ],
+  "devDependencies": {
+    "@eslint/compat": "^1.2.7",
+    "@eslint/js": "^9.21.0",
+    "@eslint/markdown": "^6.2.2",
+    "@playwright/test": "^1.50.1",
+    "@stylistic/eslint-plugin": "^4.1.0",
+    "@types/node": "^22.13.8",
+    "esbuild": "~0.25.0",
+    "eslint": "^9.21.0",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.25.0"
+  },
+  "dependencies": {
+    "htmlparser2": "^10.0.0"
+  }
+}
