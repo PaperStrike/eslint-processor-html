@@ -1,5 +1,7 @@
 # eslint-processor-html
 
+[![npm](https://img.shields.io/npm/v/eslint-processor-html?logo=npm)](https://www.npmjs.com/package/eslint-processor-html "View this project on npm")
+
 ESLint HTML processor. Extracts out the following from HTML files for other ESLint plugins to lint:
 
 * `.js`, `.mjs`, `.json`, based on `<script>` types

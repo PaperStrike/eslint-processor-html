@@ -24,6 +24,7 @@
     "processor",
     "html"
   ],
+  "repository": "github:PaperStrike/eslint-processor-html",
   "license": "ISC",
   "files": [
     "build",
